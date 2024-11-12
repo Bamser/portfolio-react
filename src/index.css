@@ -1,21 +1,79 @@
 *,
 *::before,
 *::after {
-  padding: 0;
-  margin: 0;
-  border: 0;
   box-sizing: border-box;
 }
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+html {
+  font-family: 'Poppins', sans-serif; // шрифт по умолчанию по сайту
+  font-size: 10px; // на разрешении 1600 0.625vw === 10px
+  font-style: normal;
+  font-weight: 500;
+  -webkit-animation: bugfix infinite 1s;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+
+  // плавный переход по якорным ссылкам
+  scroll-behavior: smooth;
+}
+
+body {
+  font-style: normal;
+  font-weight: normal;
+  -webkit-animation: bugfix infinite 1s;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  color: #025a5b; // цвет по умолчанию текста по сайту
+  background-color: #f8f8f8; //
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f8f8f8;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #025a5b;
+    border-radius: 20px;
+    border: 3px solid #f8f8f8;
+  }
+}
+
+input,
+textarea {
+  -webkit-animation: bugfix infinite 1s;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
 a {
+  color: unset;
+}
+
+a,
+a:hover {
   text-decoration: none;
 }
-ul,
-ol,
-li {
-  list-style: none;
+
+button,
+input,
+a,
+textarea {
+  outline: none;
+  cursor: pointer;
+  font: inherit;
 }
-img {
-  vertical-align: top;
+a:focus {
+  outline: none;
+}
+a:active {
+  outline: none;
 }
 h1,
 h2,
@@ -23,11 +81,83 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: inherit;
-  font-size: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
 }
-html,
-body {
-  height: 100%;
-  font-size: inherit;
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+button {
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  padding: 0;
+  background-color: inherit;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 117rem;
+  margin: 0 auto;
+}
+.title {
+  font-family: 'Titan One', sans-serif;
+  max-width: 60rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 1.2;
+  overflow: hidden;
+  letter-spacing: 0.5rem;
+}
+.title__animation {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.title__show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s;
+}
+.text {
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  max-width: 50rem;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 48rem) {
+  .container {
+    width: 100%;
+  }
 }
