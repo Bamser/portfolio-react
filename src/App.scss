@@ -111,18 +111,14 @@ $second-color: #e6984e;
 .portfolio {
   margin-top: 10rem;
   margin-bottom: 7rem;
+  position: relative;
+
   &__title {
     margin: 0 auto;
+    margin-bottom: 50px;
+    position: relative;
   }
-  &__items {
-    margin-top: 5rem;
-    margin-bottom: 8rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-  }
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -134,11 +130,11 @@ $second-color: #e6984e;
     &::before {
       content: '';
       position: absolute;
-      background-image: url(../image/scroll.svg);
+      background-image: url(../src/images/scroll.svg);
       width: 32px;
       height: 32px;
       top: -10px;
-      left: 170px;
+      left: 45%;
     }
     &-img {
       margin-top: 3rem;
